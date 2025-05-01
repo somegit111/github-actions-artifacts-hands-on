@@ -16,7 +16,7 @@ jobs:
     - name: Archive text file
       uses: actions/upload-artifact@v4
       with:
-        name: ./artifacts/hello-artifact
+        name: ./artifacts/hello.txt
         path: hello.txt    
   download:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
     - name: Download All Artifacts
       uses: actions/download-artifact@v4
       with:
-        path: ./artifacts/hello-artifact
+        path: ./artifacts/hello.txt
     - name: display hello-artifact content
       run: cat ./artifacts/hello.txt
     
