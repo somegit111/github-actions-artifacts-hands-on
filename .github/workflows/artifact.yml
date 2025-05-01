@@ -16,7 +16,7 @@ jobs:
     - name: Archive text file
       uses: actions/upload-artifact@v4
       with:
-        name: hello.txt
+        name: hello
         path: hello.txt    
   download:
     needs: build
@@ -25,7 +25,8 @@ jobs:
     - name: Download All Artifacts
       uses: actions/download-artifact@v4
       with:
-        path: hello.txt
+        name: hello
+        path: ./artifacts
     - name: display hello-artifact content
-      run: cat hello.txt
+      run: cat ./artifacts/hello.txt
     
